@@ -1,8 +1,8 @@
 ﻿using AoC2023;
 
 var days = System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
-    .Where(t => t.GetInterfaces().Contains(typeof(IDay))).ToList();
-days.Sort();
+    .Where(t => t.GetInterfaces().Contains(typeof(IDay))).ToList()
+    .OrderBy(x => x.Name);
 foreach (var day in days)
 {
     var inputFile = $"inputs/{day.Name.ToLower()}.txt";
